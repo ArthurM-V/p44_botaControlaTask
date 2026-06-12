@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "author": "Arthur Mesquita Vieira",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -3.4,
+      "left": -288,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -109.2,
+      "left": -159.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 22.6,
+      "left": -164.05,
+      "rotate": 270,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    ["r1:2", "led1:A", "red", ["v-28.8"]],
+    ["r1:1", "esp:D25", "red", ["h-0.3", "v20.52"]],
+    ["led1:C", "esp:GND.2", "black", ["v28.8", "h-182", "v182.4", "h331.2"]],
+    ["btn1:2.r", "esp:GND.2", "black", ["h29", "v0.2"]],
+    ["btn1:1.r", "esp:D33", "green", ["v0", "h38.6", "v67.2"]]
+  ],
+  "dependencies": {}
+}
