@@ -11,7 +11,6 @@ void taskBotao(void *pv) {
       habilitaPisca = !habilitaPisca;
     }
     ultima = leitura;
-    // Antes vTaskDelay(pdMS_TO_TICKS(40));
     vTaskDelay(pdMS_TO_TICKS(80));
   }
 }
@@ -21,7 +20,6 @@ void taskLed(void *pv) {
   while (true) {
     if (habilitaPisca) digitalWrite(25, !digitalRead(25));
     else digitalWrite(2, LOW);
-    // Antes vTaskDelay(pdMS_TO_TICKS(300));
     vTaskDelay(pdMS_TO_TICKS(800));
   }
 }
